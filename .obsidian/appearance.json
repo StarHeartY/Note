@@ -1,6 +1,6 @@
 {
   "accentColor": "#004cff",
-  "theme": "moonstone",
+  "theme": "system",
   "enabledCssSnippets": [
     "hide-inline-title"
   ],
