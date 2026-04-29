@@ -114,7 +114,7 @@
   "skipLargeFiles": {
     "maxSize": "30 MB"
   },
-  "realtimeSync": true,
+  "realtimeSync": false,
   "startupSyncDelaySeconds": 1,
   "autoSyncIntervalSeconds": 60,
   "ai": {
