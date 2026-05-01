@@ -13,5 +13,6 @@
   },
   "readableLineLength": true,
   "showLineNumber": false,
-  "newFileLocation": "current"
+  "newFileLocation": "current",
+  "trashOption": "system"
 }
