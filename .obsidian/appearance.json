@@ -5,5 +5,6 @@
     "hide-inline-title"
   ],
   "baseFontSize": 17,
-  "monospaceFontFamily": "JetBrains Mono"
+  "monospaceFontFamily": "JetBrains Mono",
+  "cssTheme": ""
 }
