@@ -173,9 +173,7 @@ myFile.close();
 
 **结构路径：**
 
-C++
-
-```
+```C++
 // 场景 A：按词/按特定类型读取 (比如读入一个接一个的整数)
 int number;
 while (myFile >> number) { 
