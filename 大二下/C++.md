@@ -283,7 +283,39 @@ const char* myMax<const char*>(const char* a, const char* b) {
     -   参数必须是编译期常量，如 `Array<int, 10> a;`
 -   **类外定义成员函数**
     -   `template <typename T> void Stack<T>::push(const T &val) { ... }`
+```cpp
+// 告诉编译器：T 是一个用来占位的泛型类型
+template <typename T>
+class MyStack {
+private:
+    T* data;      // 用 T 来定义指针
+    int capacity;
+public:
+    MyStack(int size);       // 构造函数
+    void push(const T& val); // 用 T 来做参数
+};
 
+// MyStack s(100);       // ❌ 编译直接报错！不准让编译器猜！
+MyStack<int> s1(100);    // ✅ 必须明确指定 T 是 int
+MyStack<string> s2(50);  // ✅ 必须明确指定 T 是 string
+
+
+/**
+* 类外定义成员函数
+*/
+
+// void MyStack::push(const T& val) { ... }// ❌ 错误写法（普通类的写法）：
+// ✅ 正确写法：
+template <typename T>                           // 第一顶帽子
+void MyStack<T>::push(const T& val) {           // 第二顶帽子：MyStack<T>::
+    // ... 具体的入栈逻辑 ...
+}
+
+template <typename T>
+MyStack<T>::MyStack(int size) {
+    // ... 具体的构造逻辑 ...
+}
+```
 ### 3.3 STL 核心容器
 
 -   **`vector`（动态数组）**
