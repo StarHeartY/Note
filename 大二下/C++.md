@@ -399,9 +399,9 @@ MyStack<T>::MyStack(int size) {
 ### 5.2 文件流操作
 
 -   **文件流对象**
-    -   `ifstream`：读文件
-    -   `ofstream`：写文件
-    -   `fstream`：读写文件
+    -   `<ifstream>`：读文件
+    -   `<ofstream>`：写文件
+    -   `<fstream>`：读写文件
 -   **打开文件**
     -   方式一：构造时传参 `ifstream in("data.txt");`
     -   方式二：先创建，再调用 `in.open("data.txt");`
