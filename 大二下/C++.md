@@ -136,7 +136,7 @@
     -   **调用顺序**：与构造函数严格相反（先构造的后析构，后构造的先析构）
 
 **例：**
-```C++
+```cpp
 class Apartment {
 private:
     string residentName; // 租客姓名
@@ -257,7 +257,22 @@ int main() {
 -   **模板特化**
     -   **全特化**：为特定类型提供专门实现
     -   `template <> const char* max(const char* a, const char* b) { ... }`
+**【例】：**
+```cpp
+// 1. 先给出通用的模板（基础款）
+template <typename T>
+T myMax(T a, T b) {
+    return (a > b) ? a : b;
+}
 
+// 2. 针对 const char* 提供特化版（VIP定制款）
+// template <> 表示这是一个特化版本，没有任何需要推导的泛型参数了
+template <> 
+const char* myMax<const char*>(const char* a, const char* b) {
+    // 使用 strcmp 进行字符串内容的字典序比较
+    return (strcmp(a, b) > 0) ? a : b; 
+}
+```
 ### 3.2 类模板
 
 -   **定义**
